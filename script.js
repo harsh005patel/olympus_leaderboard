@@ -12,7 +12,6 @@
 const sportConfigs = {
     cricket: {
         title: "Cricket Championship",
-        // Edit column names here:
         columns: ["Rank", "Team", "W", "L", "D", "NRR", "Pts"]
     },
     football: {
@@ -51,7 +50,8 @@ const sportConfigs = {
 
 // ============================================
 // TEAM DATA - EDIT POINTS HERE!
-// Format: [value1, value2, ...] matching columns above
+// Pool A: Desert Fighters, Fiery Falcons, Los Galacticos, Ocean Giants
+// Pool B: Invictus Aerie, Eternity Warriors, Trident Titans, Phoenix Clan
 // ============================================
 
 const sportsData = {
@@ -61,16 +61,16 @@ const sportsData = {
     // ----------------------------------------
     cricket: {
         poolA: [
-            { team: "Phoenix Titans", data: [3, 0, 0, "+1.250", 6] },
-            { team: "Thunder Hawks", data: [2, 1, 0, "+0.450", 4] },
-            { team: "Royal Knights", data: [1, 2, 0, "-0.320", 2] },
-            { team: "Storm Breakers", data: [0, 3, 0, "-1.380", 0] }
+            { team: "Desert Fighters", data: [0, 0, 0, "0.000", 0] },
+            { team: "Fiery Falcons", data: [0, 0, 0, "0.000", 0] },
+            { team: "Los Galacticos", data: [0, 0, 0, "0.000", 0] },
+            { team: "Ocean Giants", data: [0, 0, 0, "0.000", 0] }
         ],
         poolB: [
-            { team: "Dragon Warriors", data: [2, 0, 1, "+0.980", 5] },
-            { team: "Lion Kings", data: [2, 1, 0, "+0.620", 4] },
-            { team: "Eagle Strikers", data: [1, 2, 0, "-0.150", 2] },
-            { team: "Wolf Pack", data: [0, 2, 1, "-1.450", 1] }
+            { team: "Invictus Aerie", data: [0, 0, 0, "0.000", 0] },
+            { team: "Eternity Warriors", data: [0, 0, 0, "0.000", 0] },
+            { team: "Trident Titans", data: [0, 0, 0, "0.000", 0] },
+            { team: "Phoenix Clan", data: [0, 0, 0, "0.000", 0] }
         ]
     },
 
@@ -80,16 +80,16 @@ const sportsData = {
     // ----------------------------------------
     football: {
         poolA: [
-            { team: "Phoenix Titans", data: [2, 0, 1, "+5", 7] },
-            { team: "Thunder Hawks", data: [2, 1, 0, "+2", 6] },
-            { team: "Royal Knights", data: [1, 2, 0, "-2", 3] },
-            { team: "Storm Breakers", data: [0, 2, 1, "-5", 1] }
+            { team: "Desert Fighters", data: [0, 0, 0, "0", 0] },
+            { team: "Fiery Falcons", data: [0, 0, 0, "0", 0] },
+            { team: "Los Galacticos", data: [0, 0, 0, "0", 0] },
+            { team: "Ocean Giants", data: [0, 0, 0, "0", 0] }
         ],
         poolB: [
-            { team: "Dragon Warriors", data: [3, 0, 0, "+7", 9] },
-            { team: "Lion Kings", data: [1, 1, 1, "0", 4] },
-            { team: "Eagle Strikers", data: [1, 2, 0, "-3", 3] },
-            { team: "Wolf Pack", data: [0, 2, 1, "-4", 1] }
+            { team: "Invictus Aerie", data: [0, 0, 0, "0", 0] },
+            { team: "Eternity Warriors", data: [0, 0, 0, "0", 0] },
+            { team: "Trident Titans", data: [0, 0, 0, "0", 0] },
+            { team: "Phoenix Clan", data: [0, 0, 0, "0", 0] }
         ]
     },
 
@@ -99,16 +99,16 @@ const sportsData = {
     // ----------------------------------------
     volleyball: {
         poolA: [
-            { team: "Thunder Hawks", data: [3, 0, "4.50", 9] },
-            { team: "Phoenix Titans", data: [2, 1, "1.75", 6] },
-            { team: "Storm Breakers", data: [1, 2, "0.57", 3] },
-            { team: "Royal Knights", data: [0, 3, "0.22", 0] }
+            { team: "Desert Fighters", data: [0, 0, "0.00", 0] },
+            { team: "Fiery Falcons", data: [0, 0, "0.00", 0] },
+            { team: "Los Galacticos", data: [0, 0, "0.00", 0] },
+            { team: "Ocean Giants", data: [0, 0, "0.00", 0] }
         ],
         poolB: [
-            { team: "Eagle Strikers", data: [2, 1, "1.60", 6] },
-            { team: "Lion Kings", data: [2, 1, "1.75", 6] },
-            { team: "Dragon Warriors", data: [1, 2, "0.71", 3] },
-            { team: "Wolf Pack", data: [1, 2, "0.50", 3] }
+            { team: "Invictus Aerie", data: [0, 0, "0.00", 0] },
+            { team: "Eternity Warriors", data: [0, 0, "0.00", 0] },
+            { team: "Trident Titans", data: [0, 0, "0.00", 0] },
+            { team: "Phoenix Clan", data: [0, 0, "0.00", 0] }
         ]
     },
 
@@ -118,16 +118,16 @@ const sportsData = {
     // ----------------------------------------
     basketball: {
         poolA: [
-            { team: "Storm Breakers", data: [3, 0, "+47", 6] },
-            { team: "Phoenix Titans", data: [2, 1, "+15", 4] },
-            { team: "Thunder Hawks", data: [1, 2, "-17", 2] },
-            { team: "Royal Knights", data: [0, 3, "-45", 0] }
+            { team: "Desert Fighters", data: [0, 0, "0", 0] },
+            { team: "Fiery Falcons", data: [0, 0, "0", 0] },
+            { team: "Los Galacticos", data: [0, 0, "0", 0] },
+            { team: "Ocean Giants", data: [0, 0, "0", 0] }
         ],
         poolB: [
-            { team: "Wolf Pack", data: [2, 1, "+18", 4] },
-            { team: "Lion Kings", data: [2, 1, "+12", 4] },
-            { team: "Dragon Warriors", data: [2, 1, "+7", 4] },
-            { team: "Eagle Strikers", data: [0, 3, "-37", 0] }
+            { team: "Invictus Aerie", data: [0, 0, "0", 0] },
+            { team: "Eternity Warriors", data: [0, 0, "0", 0] },
+            { team: "Trident Titans", data: [0, 0, "0", 0] },
+            { team: "Phoenix Clan", data: [0, 0, "0", 0] }
         ]
     },
 
@@ -137,16 +137,16 @@ const sportsData = {
     // ----------------------------------------
     tabletennis: {
         poolA: [
-            { team: "Royal Knights", data: [3, 0, "+9", 6] },
-            { team: "Phoenix Titans", data: [2, 1, "+3", 4] },
-            { team: "Thunder Hawks", data: [1, 2, "-3", 2] },
-            { team: "Storm Breakers", data: [0, 3, "-9", 0] }
+            { team: "Desert Fighters", data: [0, 0, "0", 0] },
+            { team: "Fiery Falcons", data: [0, 0, "0", 0] },
+            { team: "Los Galacticos", data: [0, 0, "0", 0] },
+            { team: "Ocean Giants", data: [0, 0, "0", 0] }
         ],
         poolB: [
-            { team: "Dragon Warriors", data: [3, 0, "+9", 6] },
-            { team: "Eagle Strikers", data: [2, 1, "+3", 4] },
-            { team: "Wolf Pack", data: [1, 2, "-4", 2] },
-            { team: "Lion Kings", data: [0, 3, "-8", 0] }
+            { team: "Invictus Aerie", data: [0, 0, "0", 0] },
+            { team: "Eternity Warriors", data: [0, 0, "0", 0] },
+            { team: "Trident Titans", data: [0, 0, "0", 0] },
+            { team: "Phoenix Clan", data: [0, 0, "0", 0] }
         ]
     },
 
@@ -156,16 +156,16 @@ const sportsData = {
     // ----------------------------------------
     badminton: {
         poolA: [
-            { team: "Phoenix Titans", data: [2, 1, "+3", 4] },
-            { team: "Thunder Hawks", data: [2, 1, "+2", 4] },
-            { team: "Royal Knights", data: [1, 2, "-2", 2] },
-            { team: "Storm Breakers", data: [1, 2, "-3", 2] }
+            { team: "Desert Fighters", data: [0, 0, "0", 0] },
+            { team: "Fiery Falcons", data: [0, 0, "0", 0] },
+            { team: "Los Galacticos", data: [0, 0, "0", 0] },
+            { team: "Ocean Giants", data: [0, 0, "0", 0] }
         ],
         poolB: [
-            { team: "Lion Kings", data: [3, 0, "+7", 6] },
-            { team: "Dragon Warriors", data: [2, 1, "+2", 4] },
-            { team: "Eagle Strikers", data: [1, 2, "-3", 2] },
-            { team: "Wolf Pack", data: [0, 3, "-6", 0] }
+            { team: "Invictus Aerie", data: [0, 0, "0", 0] },
+            { team: "Eternity Warriors", data: [0, 0, "0", 0] },
+            { team: "Trident Titans", data: [0, 0, "0", 0] },
+            { team: "Phoenix Clan", data: [0, 0, "0", 0] }
         ]
     },
 
@@ -175,16 +175,16 @@ const sportsData = {
     // ----------------------------------------
     carrom: {
         poolA: [
-            { team: "Thunder Hawks", data: [2, 0, 1, 5] },
-            { team: "Phoenix Titans", data: [2, 1, 0, 4] },
-            { team: "Royal Knights", data: [1, 1, 1, 3] },
-            { team: "Storm Breakers", data: [0, 3, 0, 0] }
+            { team: "Desert Fighters", data: [0, 0, 0, 0] },
+            { team: "Fiery Falcons", data: [0, 0, 0, 0] },
+            { team: "Los Galacticos", data: [0, 0, 0, 0] },
+            { team: "Ocean Giants", data: [0, 0, 0, 0] }
         ],
         poolB: [
-            { team: "Dragon Warriors", data: [2, 1, 0, 4] },
-            { team: "Eagle Strikers", data: [2, 1, 0, 4] },
-            { team: "Lion Kings", data: [1, 1, 1, 3] },
-            { team: "Wolf Pack", data: [0, 2, 1, 1] }
+            { team: "Invictus Aerie", data: [0, 0, 0, 0] },
+            { team: "Eternity Warriors", data: [0, 0, 0, 0] },
+            { team: "Trident Titans", data: [0, 0, 0, 0] },
+            { team: "Phoenix Clan", data: [0, 0, 0, 0] }
         ]
     },
 
@@ -194,16 +194,16 @@ const sportsData = {
     // ----------------------------------------
     chess: {
         poolA: [
-            { team: "Royal Knights", data: [2, 0, 1, 5] },
-            { team: "Phoenix Titans", data: [2, 1, 0, 4] },
-            { team: "Thunder Hawks", data: [1, 1, 1, 3] },
-            { team: "Storm Breakers", data: [0, 3, 0, 0] }
+            { team: "Desert Fighters", data: [0, 0, 0, 0] },
+            { team: "Fiery Falcons", data: [0, 0, 0, 0] },
+            { team: "Los Galacticos", data: [0, 0, 0, 0] },
+            { team: "Ocean Giants", data: [0, 0, 0, 0] }
         ],
         poolB: [
-            { team: "Lion Kings", data: [3, 0, 0, 6] },
-            { team: "Eagle Strikers", data: [1, 0, 2, 4] },
-            { team: "Dragon Warriors", data: [1, 2, 0, 2] },
-            { team: "Wolf Pack", data: [0, 3, 0, 0] }
+            { team: "Invictus Aerie", data: [0, 0, 0, 0] },
+            { team: "Eternity Warriors", data: [0, 0, 0, 0] },
+            { team: "Trident Titans", data: [0, 0, 0, 0] },
+            { team: "Phoenix Clan", data: [0, 0, 0, 0] }
         ]
     },
 
@@ -213,33 +213,35 @@ const sportsData = {
     // ----------------------------------------
     relay: {
         poolA: [
-            { team: "Storm Breakers", data: [2, 1, 0, 11] },
-            { team: "Phoenix Titans", data: [1, 2, 1, 9] },
-            { team: "Thunder Hawks", data: [1, 1, 1, 7] },
-            { team: "Royal Knights", data: [0, 0, 2, 2] }
+            { team: "Desert Fighters", data: [0, 0, 0, 0] },
+            { team: "Fiery Falcons", data: [0, 0, 0, 0] },
+            { team: "Los Galacticos", data: [0, 0, 0, 0] },
+            { team: "Ocean Giants", data: [0, 0, 0, 0] }
         ],
         poolB: [
-            { team: "Dragon Warriors", data: [2, 2, 0, 12] },
-            { team: "Lion Kings", data: [1, 1, 2, 8] },
-            { team: "Eagle Strikers", data: [1, 1, 0, 6] },
-            { team: "Wolf Pack", data: [0, 0, 2, 2] }
+            { team: "Invictus Aerie", data: [0, 0, 0, 0] },
+            { team: "Eternity Warriors", data: [0, 0, 0, 0] },
+            { team: "Trident Titans", data: [0, 0, 0, 0] },
+            { team: "Phoenix Clan", data: [0, 0, 0, 0] }
         ]
     }
 };
 
 // ============================================
-// TEAM LOGOS - Edit image URLs here
+// TEAM LOGOS - Using local logo files
 // ============================================
 
 const teamLogos = {
-    "Phoenix Titans": "https://images.unsplash.com/photo-1557296387-5358ad7997bb?w=100&h=100&fit=crop",
-    "Thunder Hawks": "https://images.unsplash.com/photo-1611457194403-d3f8c6dde14d?w=100&h=100&fit=crop",
-    "Royal Knights": "https://images.unsplash.com/photo-1589656966895-2f33e7653819?w=100&h=100&fit=crop",
-    "Storm Breakers": "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=100&h=100&fit=crop",
-    "Dragon Warriors": "https://images.unsplash.com/photo-1577003833619-76bbd7f82948?w=100&h=100&fit=crop",
-    "Lion Kings": "https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=100&h=100&fit=crop",
-    "Eagle Strikers": "https://images.unsplash.com/photo-1611689342806-0863700ce1e4?w=100&h=100&fit=crop",
-    "Wolf Pack": "https://images.unsplash.com/photo-1564466809058-bf4114d55352?w=100&h=100&fit=crop"
+    // Pool A Teams
+    "Desert Fighters": "logos/desert_fighters.png",
+    "Fiery Falcons": "logos/fiery_falcons.png",
+    "Los Galacticos": "logos/los_galacticos.png",
+    "Ocean Giants": "logos/ocean_giants.png",
+    // Pool B Teams
+    "Invictus Aerie": "logos/invictus_aerie.png",
+    "Eternity Warriors": "logos/eternity_warriors.png",
+    "Trident Titans": "logos/trident_titans.png",
+    "Phoenix Clan": "logos/phoenix_clan.png"
 };
 
 // ============================================

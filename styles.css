@@ -410,13 +410,13 @@ body::before {
 
 /* Team Logo Styles */
 .team-logo {
-    width: 24px;
-    height: 24px;
-    border-radius: var(--radius-full);
-    object-fit: cover;
+    width: 60px;
+    height: 60px;
+    border-radius: 0;
+    object-fit: contain;
     vertical-align: middle;
-    border: 1px solid var(--border-light);
-    background: var(--olympus-marble);
+    border: none;
+    background: transparent;
     flex-shrink: 0;
 }
 
