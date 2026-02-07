@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="OLYMPUS 2026 - Annual Sports Fest Points Table & Leaderboard. Track live standings for Cricket, Football, Volleyball, Basketball, Table Tennis, Badminton, Carrom, Chess, and Relay across Pool A and Pool B.">
+    <meta name="keywords" content="OLYMPUS 2026, sports fest, leaderboard, points table, cricket, football, basketball">
+    <title>OLYMPUS 2026 | Sports Fest Leaderboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Hero Header Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <div class="olympic-rings">
+                    <span class="ring ring-1"></span>
+                    <span class="ring ring-2"></span>
+                    <span class="ring ring-3"></span>
+                </div>
+            </div>
+            <h1 class="hero-title">OLYMPUS 2026</h1>
+            <p class="hero-subtitle">Annual Sports Fest IIITVICD</p>
+
+        </div>
+    </header>
+
+    <!-- Sport Selection Menu -->
+    <nav class="sport-menu" id="sportMenu">
+        <div class="menu-container">
+            <h2 class="menu-title">Select Sport</h2>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span id="selectedSportName">Cricket</span>
+            </button>
+            <div class="sport-grid" id="sportGrid">
+                <div class="sport-card active" data-sport="cricket">
+                    <div class="sport-icon">🏏</div>
+                    <h3 class="sport-name">Cricket</h3>
+                </div>
+                <div class="sport-card" data-sport="football">
+                    <div class="sport-icon">⚽</div>
+                    <h3 class="sport-name">Football</h3>
+                </div>
+                <div class="sport-card" data-sport="volleyball">
+                    <div class="sport-icon">🏐</div>
+                    <h3 class="sport-name">Volleyball</h3>
+                </div>
+                <div class="sport-card" data-sport="basketball">
+                    <div class="sport-icon">🏀</div>
+                    <h3 class="sport-name">Basketball</h3>
+                </div>
+                <div class="sport-card" data-sport="tabletennis">
+                    <div class="sport-icon">🏓</div>
+                    <h3 class="sport-name">Table Tennis</h3>
+                </div>
+                <div class="sport-card" data-sport="badminton">
+                    <div class="sport-icon">🏸</div>
+                    <h3 class="sport-name">Badminton</h3>
+                </div>
+                <div class="sport-card" data-sport="carrom">
+                    <div class="sport-icon">🎯</div>
+                    <h3 class="sport-name">Carrom</h3>
+                </div>
+                <div class="sport-card" data-sport="chess">
+                    <div class="sport-icon">♟️</div>
+                    <h3 class="sport-name">Chess</h3>
+                </div>
+                <div class="sport-card" data-sport="relay">
+                    <div class="sport-icon">🏃</div>
+                    <h3 class="sport-name">Relay</h3>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Current Sport Display -->
+    <section class="current-sport">
+        <h2 class="current-sport-title" id="currentSportTitle">Cricket Championship</h2>
+    </section>
+
+    <!-- Leaderboards Container -->
+    <main class="leaderboards-container">
+        <!-- Pool A Leaderboard -->
+        <section class="pool-section">
+            <div class="pool-header">
+                <h2 class="pool-title">Pool A</h2>
+                <div class="pool-badge">Group Stage</div>
+            </div>
+            <div class="leaderboard-wrapper">
+                <table class="leaderboard" id="poolATable">
+                    <thead id="poolAHead">
+                        <!-- Dynamic headers based on sport -->
+                    </thead>
+                    <tbody id="poolABody">
+                        <!-- Dynamic content will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Pool B Leaderboard -->
+        <section class="pool-section">
+            <div class="pool-header">
+                <h2 class="pool-title">Pool B</h2>
+                <div class="pool-badge">Group Stage</div>
+            </div>
+            <div class="leaderboard-wrapper">
+                <table class="leaderboard" id="poolBTable">
+                    <thead id="poolBHead">
+                        <!-- Dynamic headers based on sport -->
+                    </thead>
+                    <tbody id="poolBBody">
+                        <!-- Dynamic content will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">OLYMPUS 2026 Annual Sports Fest | All Rights Reserved</p>
+        <p class="footer-subtext">Where Champions Rise</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

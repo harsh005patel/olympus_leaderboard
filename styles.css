@@ -1,0 +1,769 @@
+/* ================================
+   OLYMPUS 2026 - Greek God Theme
+   Minimal White Design
+   ================================ */
+
+/* CSS Variables - Design System */
+:root {
+    /* Primary Colors - White Theme */
+    --primary-bg: #ffffff;
+    --primary-light: #f8f9fa;
+    --primary-off-white: #fafafa;
+
+    /* Greek God Theme Colors */
+    --olympus-gold: #c9a227;
+    --olympus-gold-light: #e8d48b;
+    --olympus-bronze: #cd7f32;
+    --olympus-marble: #f5f5f5;
+    --olympus-stone: #8b8680;
+    --olympus-dark: #2c2c2c;
+    --olympus-navy: #1a1a2e;
+
+    /* Accent Colors */
+    --accent-laurel: #4a7c59;
+    --accent-silver: #c0c0c0;
+
+    /* Text Colors */
+    --text-primary: #1a1a1a;
+    --text-secondary: #555555;
+    --text-muted: #888888;
+
+    /* Borders */
+    --border-light: rgba(0, 0, 0, 0.08);
+    --border-medium: rgba(0, 0, 0, 0.12);
+
+    /* Shadows */
+    --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.06);
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+    --shadow-gold: 0 0 30px rgba(201, 162, 39, 0.15);
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 50%;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Typography */
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Reset & Base Styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--primary-bg);
+    min-height: 100vh;
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Subtle Greek Pattern Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 50% 0%, rgba(201, 162, 39, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ================================
+   HERO SECTION
+   ================================ */
+.hero {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--primary-off-white) 0%, var(--primary-bg) 100%);
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* Greek Column Decorations */
+.hero::before,
+.hero::after {
+    content: '🏛️';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    opacity: 0.15;
+}
+
+.hero::before {
+    left: 5%;
+}
+
+.hero::after {
+    right: 5%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Olympic Laurel Wreath Style Rings */
+.olympic-rings {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.ring {
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-full);
+    border: 3px solid;
+    animation: ringPulse 3s ease-in-out infinite;
+}
+
+.ring-1 {
+    border-color: var(--olympus-gold);
+    animation-delay: 0s;
+}
+
+.ring-2 {
+    border-color: var(--olympus-stone);
+    animation-delay: 0.4s;
+}
+
+.ring-3 {
+    border-color: var(--olympus-bronze);
+    animation-delay: 0.8s;
+}
+
+@keyframes ringPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 5rem);
+    letter-spacing: 0.2em;
+    color: var(--olympus-dark);
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+}
+
+/* Laurel wreath decoration */
+.hero-title::before {
+    content: '🌿';
+    position: absolute;
+    left: -0.8em;
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1);
+    font-size: 0.5em;
+    opacity: 0.6;
+}
+
+.hero-title::after {
+    content: '🌿';
+    position: absolute;
+    right: -0.8em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.5em;
+    opacity: 0.6;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-weight: 500;
+}
+
+/* ================================
+   SPORT MENU
+   ================================ */
+.sport-menu {
+    padding: var(--spacing-lg);
+    background: var(--primary-bg);
+}
+
+.menu-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.menu-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.sport-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+    box-sizing: border-box;
+}
+
+.sport-card {
+    background: var(--primary-bg);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    min-width: 110px;
+    width: 110px;
+}
+
+.sport-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--olympus-gold);
+    box-shadow: var(--shadow-card);
+}
+
+.sport-card.active {
+    background: var(--olympus-marble);
+    border-color: var(--olympus-gold);
+    box-shadow: var(--shadow-gold);
+}
+
+.sport-card.active .sport-name {
+    color: var(--olympus-dark);
+    font-weight: 700;
+}
+
+.sport-icon {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.sport-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ================================
+   CURRENT SPORT DISPLAY
+   ================================ */
+.current-sport {
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+    background: var(--primary-bg);
+}
+
+.current-sport-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    letter-spacing: 0.15em;
+    color: var(--olympus-dark);
+    position: relative;
+    display: inline-block;
+}
+
+/* Decorative line */
+.current-sport-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--olympus-gold), transparent);
+}
+
+/* ================================
+   LEADERBOARDS - STACKED VERTICALLY
+   ================================ */
+.leaderboards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-lg) var(--spacing-2xl);
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pool-section {
+    width: 100%;
+    max-width: 100%;
+    background: var(--primary-bg);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pool-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--olympus-marble);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.pool-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: var(--olympus-dark);
+}
+
+.pool-badge {
+    background: var(--primary-bg);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    border: 1px solid var(--border-light);
+}
+
+.leaderboard-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+/* Team Logo Styles */
+.team-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    vertical-align: middle;
+    border: 1px solid var(--border-light);
+    background: var(--olympus-marble);
+    flex-shrink: 0;
+}
+
+.team-cell {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.leaderboard thead {
+    background: var(--primary-off-white);
+}
+
+.leaderboard th {
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    white-space: nowrap;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.leaderboard th.team-col {
+    text-align: left;
+}
+
+.leaderboard tbody tr {
+    border-bottom: 1px solid var(--border-light);
+    transition: all var(--transition-fast);
+}
+
+.leaderboard tbody tr:last-child {
+    border-bottom: none;
+}
+
+.leaderboard tbody tr:hover {
+    background: var(--olympus-marble);
+}
+
+.leaderboard td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: center;
+    font-size: 0.875rem;
+    vertical-align: middle;
+    color: var(--text-primary);
+}
+
+.leaderboard td.team-col {
+    text-align: left;
+}
+
+/* Rank Badges - Greek Medal Style */
+.rank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.rank-1 {
+    background: linear-gradient(135deg, #ffd700, #f0c420);
+    color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}
+
+.rank-2 {
+    background: linear-gradient(135deg, #e8e8e8, #c0c0c0);
+    color: #1a1a1a;
+}
+
+.rank-3 {
+    background: linear-gradient(135deg, #cd7f32, #b87333);
+    color: #ffffff;
+}
+
+.rank-4 {
+    background: var(--olympus-marble);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-light);
+}
+
+/* Team Name */
+.team-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.team-icon {
+    margin-right: var(--spacing-xs);
+}
+
+/* Points Column */
+.points {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--olympus-gold);
+}
+
+/* Stat Columns */
+.stat-positive {
+    color: var(--accent-laurel);
+    font-weight: 500;
+}
+
+.stat-negative {
+    color: #c75050;
+    font-weight: 500;
+}
+
+.stat-neutral {
+    color: var(--text-muted);
+}
+
+/* NRR and specialized stats */
+.nrr-positive {
+    color: var(--accent-laurel);
+    font-weight: 600;
+}
+
+.nrr-negative {
+    color: #c75050;
+    font-weight: 600;
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+.footer {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    border-top: 1px solid var(--border-light);
+    background: var(--primary-off-white);
+}
+
+.footer-text {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-subtext {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.25em;
+    color: var(--olympus-gold);
+}
+
+/* ================================
+   ANIMATIONS
+   ================================ */
+.fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Row animation stagger */
+.leaderboard tbody tr {
+    animation: slideUp 0.3s ease-out backwards;
+}
+
+.leaderboard tbody tr:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.leaderboard tbody tr:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.leaderboard tbody tr:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.leaderboard tbody tr:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: var(--primary-bg);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: var(--text-primary);
+    margin: 0 auto var(--spacing-md);
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile-menu-btn .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mobile-menu-btn .hamburger span {
+    width: 20px;
+    height: 2px;
+    background: var(--olympus-gold);
+    transition: all var(--transition-fast);
+}
+
+.mobile-menu-btn.active .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+}
+
+.mobile-menu-btn.active .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .sport-grid {
+        display: none;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        width: 100%;
+    }
+
+    .sport-grid.active {
+        display: flex;
+    }
+
+    .sport-card {
+        width: 100%;
+        min-width: unset;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .sport-icon {
+        margin-bottom: 0;
+        font-size: 1.5rem;
+    }
+
+    .sport-name {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: var(--spacing-xl) var(--spacing-sm);
+    }
+
+    .hero::before,
+    .hero::after {
+        display: none;
+    }
+
+    .hero-title::before,
+    .hero-title::after {
+        display: none;
+    }
+
+    .hero-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+    }
+
+    .leaderboards-container {
+        padding: var(--spacing-sm);
+    }
+
+    .leaderboard th,
+    .leaderboard td {
+        padding: var(--spacing-xs);
+        font-size: 0.75rem;
+    }
+
+    .pool-header {
+        padding: var(--spacing-sm);
+    }
+
+    .pool-title {
+        font-size: 1.25rem;
+    }
+}
+
+/* ================================
+   SCROLLBAR STYLING
+   ================================ */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-off-white);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
