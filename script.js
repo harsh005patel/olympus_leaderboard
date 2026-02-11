@@ -86,8 +86,8 @@ const sportsData = {
     // ----------------------------------------
     football: {
         poolA: [
-            { team: "Desert Fighters", data: [0, 2, -2], qualified: false },
-            { team: "Fiery Falcons", data: [0, 2, -1] },
+            { team: "Desert Fighters", data: [0, 2, -2], eliminated: true },
+            { team: "Fiery Falcons", data: [0, 2, -1], eliminated: true },
             { team: "Los Galacticos", data: [2, 0, 0], qualified: true },
             { team: "Ocean Giants", data: [2, 0, 3], qualified: true }
         ],
@@ -95,7 +95,7 @@ const sportsData = {
             { team: "Invictus Aerie", data: [1, 1, 0] },
             { team: "Eternity Warriors", data: [1, 1, 2] },
             { team: "Trident Titans", data: [2, 1, 0], qualified: true },
-            { team: "Phoenix Clan", data: [1, 2, -2] }
+            { team: "Phoenix Clan", data: [1, 2, -2], eliminated: true }
         ]
     },
 
@@ -105,16 +105,16 @@ const sportsData = {
     // ----------------------------------------
     volleyball: {
         poolA: [
-            { team: "Desert Fighters", data: [2, 1, "-"], qualified: true },
-            { team: "Fiery Falcons", data: [0, 3, "-"] },
-            { team: "Los Galacticos", data: [3, 0, "-"], qualified: true },
-            { team: "Ocean Giants", data: [1, 2, "-"] }
+            { team: "Desert Fighters", data: [2, 1, "15"], qualified: true },
+            { team: "Fiery Falcons", data: [0, 3, "-33"], eliminated: true },
+            { team: "Los Galacticos", data: [3, 0, "36"], qualified: true },
+            { team: "Ocean Giants", data: [1, 2, "-18"], eliminated: true }
         ],
         poolB: [
-            { team: "Invictus Aerie", data: [0, 3, "-"] },
-            { team: "Eternity Warriors", data: [2, 1, "-"], qualified: true },
-            { team: "Trident Titans", data: [1, 2, "-"] },
-            { team: "Phoenix Clan", data: [3, 0, "-"], qualified: true }
+            { team: "Invictus Aerie", data: [0, 3, "-35"], eliminated: true },
+            { team: "Eternity Warriors", data: [2, 1, "-2"], qualified: true },
+            { team: "Trident Titans", data: [1, 2, "-11"], eliminated: true },
+            { team: "Phoenix Clan", data: [3, 0, "48"], qualified: true }
         ]
     },
 
@@ -124,16 +124,16 @@ const sportsData = {
     // ----------------------------------------
     basketball: {
         poolA: [
-            { team: "Desert Fighters", data: [0, 0, "-"] },
-            { team: "Fiery Falcons", data: [0, 0, "-"] },
-            { team: "Los Galacticos", data: [0, 0, "-"] },
-            { team: "Ocean Giants", data: [0, 0, "-"] }
+            { team: "Desert Fighters", data: [3, 0, "-"] },
+            { team: "Fiery Falcons", data: [0, 2, "-"] },
+            { team: "Los Galacticos", data: [1, 2, "-"] },
+            { team: "Ocean Giants", data: [1, 1, "-"] }
         ],
         poolB: [
-            { team: "Invictus Aerie", data: [0, 0, "-"] },
-            { team: "Eternity Warriors", data: [0, 0, "-"] },
-            { team: "Trident Titans", data: [0, 0, "-"] },
-            { team: "Phoenix Clan", data: [0, 0, "-"] }
+            { team: "Invictus Aerie", data: [0, 2, "-"] },
+            { team: "Eternity Warriors", data: [1, 1, "-"] },
+            { team: "Trident Titans", data: [1, 1, "-"] },
+            { team: "Phoenix Clan", data: [2, 0, "-"] }
         ]
     },
 
@@ -143,16 +143,16 @@ const sportsData = {
     // ----------------------------------------
     tabletennis: {
         poolA: [
-            { team: "Desert Fighters", data: [0, 3, "-"] },
-            { team: "Fiery Falcons", data: [1, 2, "-"] },
+            { team: "Desert Fighters", data: [0, 3, "-"], eliminated: true },
+            { team: "Fiery Falcons", data: [1, 2, "-"], eliminated: true },
             { team: "Los Galacticos", data: [2, 1, "-"], qualified: true },
             { team: "Ocean Giants", data: [3, 0, "-"], qualified: true }
         ],
         poolB: [
-            { team: "Invictus Aerie", data: [1, 2, "-"] },
-            { team: "Eternity Warriors", data: [3, 0, "-"], qualified: true },
-            { team: "Trident Titans", data: [2, 1, "-"], qualified: true },
-            { team: "Phoenix Clan", data: [0, 3, "-"] }
+            { team: "Invictus Aerie", data: [1, 2, "-3"], eliminated: true },
+            { team: "Eternity Warriors", data: [3, 0, "11"], qualified: true },
+            { team: "Trident Titans", data: [2, 1, "7"], qualified: true },
+            { team: "Phoenix Clan", data: [0, 3, "-15"], eliminated: true }
         ]
     },
 
@@ -187,10 +187,10 @@ const sportsData = {
             { team: "Ocean Giants", data: [2, 0, "-"] }
         ],
         poolB: [
-            { team: "Invictus Aerie", data: [1, 0, "-"] },
-            { team: "Eternity Warriors", data: [0, 1, "-"] },
-            { team: "Trident Titans", data: [0, 1, "-"] },
-            { team: "Phoenix Clan", data: [1, 0, "-"] }
+            { team: "Invictus Aerie", data: [2, 0, "-"] },
+            { team: "Eternity Warriors", data: [1, 1, "-"] },
+            { team: "Trident Titans", data: [0, 2, "-"] },
+            { team: "Phoenix Clan", data: [1, 1, "-"] }
         ]
     },
 
@@ -200,10 +200,10 @@ const sportsData = {
     // ----------------------------------------
     chess: {
         poolA: [
-            { team: "Desert Fighters", data: [0, 2, "-"] },
-            { team: "Fiery Falcons", data: [1, 1, "-"] },
-            { team: "Los Galacticos", data: [1, 1, "-"] },
-            { team: "Ocean Giants", data: [2, 0, "-"], qualified: true }
+            { team: "Desert Fighters", data: [0, 3, "-"], eliminated: true },
+            { team: "Fiery Falcons", data: [2, 1, "-"], qualified: true },
+            { team: "Los Galacticos", data: [1, 2, "-"], eliminated: true },
+            { team: "Ocean Giants", data: [3, 0, "-"], qualified: true }
         ],
         poolB: [
             { team: "Invictus Aerie", data: [1, 0, "-"] },
@@ -372,24 +372,7 @@ function renderTableBody(bodyId, teams, config, sport) {
     tbody.innerHTML = '';
 
     // Sort teams by auto-computed points in descending order
-    const sortedTeams = [...teams].sort((a, b) => {
-        const pointsA = computePoints(a, config);
-        const pointsB = computePoints(b, config);
-
-        if (pointsB !== pointsA) {
-            return pointsB - pointsA; // Primary: Points descending
-        }
-
-        // Tiebreaker: use last column in data (NRR for cricket, GD for football)
-        if (sport === 'cricket' || sport === 'football') {
-            const tieIdx = a.data.length - 1;
-            const valA = parseFloat(a.data[tieIdx]) || 0;
-            const valB = parseFloat(b.data[tieIdx]) || 0;
-            return valB - valA; // Higher value wins
-        }
-
-        return 0; // Keep original order if no tiebreaker
-    });
+    const sortedTeams = [...teams].sort((a, b) => compareTeams(a, b, config));
 
     sortedTeams.forEach((teamData, index) => {
         const row = document.createElement('tr');
@@ -406,23 +389,7 @@ function renderGeneralLeaderboard(bodyId, data, config, sport) {
     const allTeams = [...data.poolA, ...data.poolB];
 
     // Sort by auto-computed points
-    const sortedTeams = [...allTeams].sort((a, b) => {
-        const pointsA = computePoints(a, config);
-        const pointsB = computePoints(b, config);
-
-        if (pointsB !== pointsA) {
-            return pointsB - pointsA;
-        }
-
-        if (sport === 'cricket' || sport === 'football') {
-            const tieIdx = a.data.length - 1;
-            const valA = parseFloat(a.data[tieIdx]) || 0;
-            const valB = parseFloat(b.data[tieIdx]) || 0;
-            return valB - valA;
-        }
-
-        return 0;
-    });
+    const sortedTeams = [...allTeams].sort((a, b) => compareTeams(a, b, config));
 
     sortedTeams.forEach((teamData, index) => {
         const row = document.createElement('tr');
@@ -454,6 +421,30 @@ function computePoints(teamData, config) {
         d = Number(teamData.data[dDataIndex]) || 0;
     }
     return (w * 2) + d;
+}
+
+// Compare two teams for sorting (Points -> Tie Breaker)
+function compareTeams(a, b, config) {
+    const pointsA = computePoints(a, config);
+    const pointsB = computePoints(b, config);
+
+    if (pointsB !== pointsA) {
+        return pointsB - pointsA; // Primary: Points descending
+    }
+
+    // Tiebreaker: Check for NRR, GD, or PD column
+    const tieBreakers = ["NRR", "GD", "PD"];
+    const tieColIndex = config.columns.findIndex(col => tieBreakers.includes(col));
+
+    if (tieColIndex !== -1) {
+        // Calculate data index: colIndex - 3 (Rank, Team, P)
+        const dataIdx = tieColIndex - 3;
+        const valA = parseFloat(a.data[dataIdx]) || 0;
+        const valB = parseFloat(b.data[dataIdx]) || 0;
+        return valB - valA; // Higher value wins
+    }
+
+    return 0;
 }
 
 function generateRowHTML(teamData, rank, config) {
