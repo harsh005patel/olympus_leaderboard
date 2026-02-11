@@ -21,6 +21,7 @@
 <body>
     <!-- Hero Header Section -->
     <header class="hero">
+        <img src="logos/olympus.png" alt="Olympus Logo" class="hero-logo hero-logo-left">
         <div class="hero-content">
             <div class="logo-container">
                 <div class="olympic-rings">
@@ -31,9 +32,17 @@
             </div>
             <h1 class="hero-title">OLYMPUS 2026</h1>
             <p class="hero-subtitle">Annual Sports Fest IIITVICD</p>
-
         </div>
+        <img src="logos/sports.png" alt="Sports Logo" class="hero-logo hero-logo-right">
     </header>
+
+    <!-- Overall Leaderboard Button -->
+    <div class="overall-btn-container">
+        <button class="overall-btn" id="overallBtn">
+            <span class="overall-icon">🏆</span>
+            <span class="overall-text">Overall Leaderboard</span>
+        </button>
+    </div>
 
     <!-- Sport Selection Menu -->
     <nav class="sport-menu" id="sportMenu">
@@ -88,49 +97,98 @@
         </div>
     </nav>
 
-    <!-- Current Sport Display -->
-    <section class="current-sport">
-        <h2 class="current-sport-title" id="currentSportTitle">Cricket Championship</h2>
-    </section>
+    <!-- Sport-specific content (toggled) -->
+    <div id="sportContent">
+        <!-- Current Sport Display -->
+        <section class="current-sport">
+            <h2 class="current-sport-title" id="currentSportTitle">Cricket Championship</h2>
+        </section>
+        <div id="comingSoonNotice" class="coming-soon-notice" style="display: none;">
+            <p>📢 Stats to be updated soon</p>
+        </div>
 
-    <!-- Leaderboards Container -->
-    <main class="leaderboards-container">
-        <!-- Pool A Leaderboard -->
-        <section class="pool-section">
-            <div class="pool-header">
-                <h2 class="pool-title">Pool A</h2>
-                <div class="pool-badge">Group Stage</div>
-            </div>
-            <div class="leaderboard-wrapper">
-                <table class="leaderboard" id="poolATable">
-                    <thead id="poolAHead">
-                        <!-- Dynamic headers based on sport -->
-                    </thead>
-                    <tbody id="poolABody">
-                        <!-- Dynamic content will be inserted here -->
-                    </tbody>
-                </table>
-            </div>
+        <!-- Leaderboards Container -->
+        <main class="leaderboards-container">
+            <!-- Pool A Leaderboard -->
+            <section class="pool-section">
+                <div class="pool-header">
+                    <h2 class="pool-title">Pool A</h2>
+                    <div class="pool-badge">Group Stage</div>
+                </div>
+                <div class="leaderboard-wrapper">
+                    <table class="leaderboard" id="poolATable">
+                        <thead id="poolAHead">
+                            <!-- Dynamic headers based on sport -->
+                        </thead>
+                        <tbody id="poolABody">
+                            <!-- Dynamic content will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Pool B Leaderboard -->
+            <section class="pool-section">
+                <div class="pool-header">
+                    <h2 class="pool-title">Pool B</h2>
+                    <div class="pool-badge">Group Stage</div>
+                </div>
+                <div class="leaderboard-wrapper">
+                    <table class="leaderboard" id="poolBTable">
+                        <thead id="poolBHead">
+                            <!-- Dynamic headers based on sport -->
+                        </thead>
+                        <tbody id="poolBBody">
+                            <!-- Dynamic content will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- General Leaderboard -->
+            <section class="pool-section general-section">
+                <div class="pool-header general-header">
+                    <h2 class="pool-title">General Leaderboard</h2>
+                    <div class="pool-badge general-badge">Group stage</div>
+                </div>
+                <div class="leaderboard-wrapper">
+                    <table class="leaderboard" id="generalTable">
+                        <thead id="generalHead">
+                            <!-- Dynamic headers based on sport -->
+                        </thead>
+                        <tbody id="generalBody">
+                            <!-- Dynamic content will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Overall Leaderboard content (toggled) -->
+    <div id="overallContent" style="display: none;">
+        <section class="current-sport">
+            <h2 class="current-sport-title">Overall Leaderboard</h2> <br> <br>
+            <h3 style="color: rgb(255, 249, 84);">(To be updated soon)</h3>
         </section>
 
-        <!-- Pool B Leaderboard -->
-        <section class="pool-section">
-            <div class="pool-header">
-                <h2 class="pool-title">Pool B</h2>
-                <div class="pool-badge">Group Stage</div>
-            </div>
-            <div class="leaderboard-wrapper">
-                <table class="leaderboard" id="poolBTable">
-                    <thead id="poolBHead">
-                        <!-- Dynamic headers based on sport -->
-                    </thead>
-                    <tbody id="poolBBody">
-                        <!-- Dynamic content will be inserted here -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
+        <div class="leaderboards-container">
+            <section class="pool-section general-section">
+                <div class="pool-header general-header">
+                    <h2 class="pool-title">Combined Points — All Sports</h2>
+                    <div class="pool-badge general-badge">Overall</div>
+                </div>
+                <div class="leaderboard-wrapper">
+                    <table class="leaderboard" id="overallTable">
+                        <thead id="overallHead">
+                        </thead>
+                        <tbody id="overallBody">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

@@ -1,41 +1,49 @@
 /* ================================
-   OLYMPUS 2026 - Greek God Theme
-   Minimal White Design
+   OLYMPUS 2026 - Dark Sportive Theme
+   Premium Dark Mode with Dynamic Backgrounds
    ================================ */
 
 /* CSS Variables - Design System */
 :root {
-    /* Primary Colors - White Theme */
-    --primary-bg: #ffffff;
-    --primary-light: #f8f9fa;
-    --primary-off-white: #fafafa;
+    /* Primary Colors - Dark Theme */
+    --primary-bg: #0a0a0f;
+    --primary-light: #12121a;
+    --primary-off-white: #1a1a25;
+    --primary-surface: #15151f;
+    --primary-elevated: #1e1e2a;
 
-    /* Greek God Theme Colors */
-    --olympus-gold: #c9a227;
-    --olympus-gold-light: #e8d48b;
-    --olympus-bronze: #cd7f32;
-    --olympus-marble: #f5f5f5;
-    --olympus-stone: #8b8680;
-    --olympus-dark: #2c2c2c;
-    --olympus-navy: #1a1a2e;
+    /* Greek God Theme Colors - Vibrant */
+    --olympus-gold: #ffd700;
+    --olympus-gold-light: #ffe55c;
+    --olympus-bronze: #e8a850;
+    --olympus-marble: #1a1a25;
+    --olympus-stone: #9999aa;
+    --olympus-dark: #ffffff;
+    --olympus-navy: #0d0d15;
 
-    /* Accent Colors */
-    --accent-laurel: #4a7c59;
-    --accent-silver: #c0c0c0;
+    /* Accent Colors - Neon Sports */
+    --accent-laurel: #00ff88;
+    --accent-silver: #e0e0e0;
+    --accent-cyan: #00d4ff;
+    --accent-magenta: #ff00aa;
+    --accent-orange: #ff6b35;
+    --accent-red: #ff4444;
 
     /* Text Colors */
-    --text-primary: #1a1a1a;
-    --text-secondary: #555555;
-    --text-muted: #888888;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0c0;
+    --text-muted: #6a6a80;
 
     /* Borders */
-    --border-light: rgba(0, 0, 0, 0.08);
-    --border-medium: rgba(0, 0, 0, 0.12);
+    --border-light: rgba(255, 255, 255, 0.08);
+    --border-medium: rgba(255, 255, 255, 0.15);
+    --border-glow: rgba(255, 215, 0, 0.4);
 
     /* Shadows */
-    --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.06);
-    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
-    --shadow-gold: 0 0 30px rgba(201, 162, 39, 0.15);
+    --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.4);
+    --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.5);
+    --shadow-gold: 0 0 40px rgba(255, 215, 0, 0.25);
+    --shadow-neon: 0 0 30px rgba(0, 212, 255, 0.3);
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -82,9 +90,11 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* Subtle Greek Pattern Background */
+
+/* Dynamic Sportive Background */
 body::before {
     content: '';
     position: fixed;
@@ -92,41 +102,128 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image:
-        radial-gradient(circle at 50% 0%, rgba(201, 162, 39, 0.03) 0%, transparent 50%);
+    background:
+        /* Stadium lights effect */
+        radial-gradient(ellipse 80% 50% at 10% 10%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 50% at 90% 20%, rgba(0, 212, 255, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 50% 90%, rgba(255, 0, 170, 0.05) 0%, transparent 50%),
+        /* Subtle grid pattern for sports field feel */
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 60px 60px, 60px 60px;
     pointer-events: none;
     z-index: -1;
+    animation: ambientPulse 8s ease-in-out infinite alternate;
+}
+
+/* Floating particles overlay */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(1px 1px at 20% 30%, rgba(255, 215, 0, 0.4), transparent),
+        radial-gradient(1px 1px at 40% 70%, rgba(0, 212, 255, 0.3), transparent),
+        radial-gradient(1px 1px at 70% 25%, rgba(255, 255, 255, 0.2), transparent),
+        radial-gradient(1px 1px at 90% 90%, rgba(0, 255, 136, 0.3), transparent);
+    background-size: 300px 300px;
+    animation: particleFloat 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes ambientPulse {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50px, -50px);
+    }
 }
 
 /* ================================
    HERO SECTION
    ================================ */
 .hero {
-    padding: var(--spacing-2xl) var(--spacing-lg);
+    padding: 0;
+    margin: 0;
     text-align: center;
     position: relative;
-    overflow: hidden;
-    background: linear-gradient(180deg, var(--primary-off-white) 0%, var(--primary-bg) 100%);
+    overflow: visible;
+    background:
+        linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        linear-gradient(225deg, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, var(--primary-light) 0%, var(--primary-bg) 100%);
     border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Greek Column Decorations */
-.hero::before,
+.hero-logo {
+    width: clamp(80px, 20vw, 300px);
+    height: clamp(80px, 20vw, 300px);
+    object-fit: contain;
+    z-index: 2;
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.3));
+    transition: transform var(--transition-normal);
+
+}
+
+.hero-logo:hover {
+    transform: scale(1.08);
+}
+
+/* Animated gradient sweep */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    right: -100%;
+    bottom: 0;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 215, 0, 0.05),
+            transparent);
+    animation: heroPulse 4s ease-in-out infinite;
+}
+
+@keyframes heroPulse {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Sports-themed side decorations */
 .hero::after {
-    content: '🏛️';
+    content: '';
     position: absolute;
     top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--olympus-gold), transparent);
+    opacity: 0.3;
     transform: translateY(-50%);
-    font-size: 2.5rem;
-    opacity: 0.15;
-}
-
-.hero::before {
-    left: 5%;
-}
-
-.hero::after {
-    right: 5%;
 }
 
 .hero-content {
@@ -145,6 +242,7 @@ body::before {
     display: flex;
     justify-content: center;
     gap: 8px;
+    padding-top: 20px;
     margin-bottom: var(--spacing-sm);
 }
 
@@ -192,43 +290,126 @@ body::before {
     color: var(--olympus-dark);
     margin-bottom: var(--spacing-xs);
     position: relative;
+    text-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg, #fff 0%, var(--olympus-gold) 50%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleShine 3s ease-in-out infinite;
+    background-size: 200% 100%;
 }
 
-/* Laurel wreath decoration */
+@keyframes titleShine {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Trophy decorations */
 .hero-title::before {
-    content: '🌿';
+    content: '🏆';
     position: absolute;
-    left: -0.8em;
+    left: -1em;
     top: 50%;
-    transform: translateY(-50%) scaleX(-1);
-    font-size: 0.5em;
-    opacity: 0.6;
+    transform: translateY(-50%);
+    font-size: 0.4em;
+    opacity: 0.7;
+    animation: float 3s ease-in-out infinite;
 }
 
 .hero-title::after {
-    content: '🌿';
+    content: '🏆';
     position: absolute;
-    right: -0.8em;
+    right: -1em;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 0.5em;
-    opacity: 0.6;
+    font-size: 0.4em;
+    opacity: 0.7;
+    animation: float 3s ease-in-out infinite 0.5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateY(-60%) scale(1.1);
+    }
 }
 
 .hero-subtitle {
     font-size: 1rem;
-    color: var(--text-secondary);
+    color: var(--accent-cyan);
     text-transform: uppercase;
     letter-spacing: 0.4em;
     font-weight: 500;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
 }
 
 /* ================================
    SPORT MENU
    ================================ */
+/* ================================
+   OVERALL LEADERBOARD BUTTON
+   ================================ */
+.overall-btn-container {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-md) var(--spacing-lg) 0;
+}
+
+.overall-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: var(--spacing-sm) var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%);
+    border: 2px solid rgba(255, 215, 0, 0.4);
+    border-radius: var(--radius-lg);
+    color: var(--olympus-gold);
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(10px);
+    text-transform: uppercase;
+}
+
+.overall-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3), 0 0 0 1px rgba(255, 215, 0, 0.5);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.25) 0%, rgba(255, 215, 0, 0.1) 100%);
+}
+
+.overall-btn.active {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 215, 0, 0.15) 100%);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.4), inset 0 0 20px rgba(255, 215, 0, 0.08);
+    border-color: var(--olympus-gold);
+}
+
+.overall-icon {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+}
+
+.overall-text {
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
 .sport-menu {
     padding: var(--spacing-lg);
-    background: var(--primary-bg);
+    background: transparent;
+    position: relative;
 }
 
 .menu-container {
@@ -242,9 +423,10 @@ body::before {
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: var(--spacing-md);
-    color: var(--text-secondary);
+    color: var(--olympus-gold);
     letter-spacing: 0.15em;
     text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
 }
 
 .sport-grid {
@@ -259,37 +441,63 @@ body::before {
 }
 
 .sport-card {
-    background: var(--primary-bg);
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
     text-align: center;
     cursor: pointer;
     transition: all var(--transition-normal);
-    min-width: 110px;
-    width: 110px;
+    min-width: 140px;
+    width: 140px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.sport-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 215, 0, 0.05) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
 }
 
 .sport-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.02);
     border-color: var(--olympus-gold);
-    box-shadow: var(--shadow-card);
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2), 0 0 0 1px rgba(255, 215, 0, 0.3);
+}
+
+.sport-card:hover::before {
+    opacity: 1;
 }
 
 .sport-card.active {
-    background: var(--olympus-marble);
-    border-color: var(--olympus-gold);
-    box-shadow: var(--shadow-gold);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%);
+    border: 2px solid var(--olympus-gold);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3), inset 0 0 20px rgba(255, 215, 0, 0.05);
 }
 
 .sport-card.active .sport-name {
-    color: var(--olympus-dark);
+    color: var(--olympus-gold);
     font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 .sport-icon {
     font-size: 1.75rem;
     margin-bottom: var(--spacing-xs);
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
+    transition: transform var(--transition-fast);
+}
+
+.sport-card:hover .sport-icon {
+    transform: scale(1.15);
 }
 
 .sport-name {
@@ -307,28 +515,48 @@ body::before {
 .current-sport {
     text-align: center;
     padding: var(--spacing-lg) var(--spacing-md);
-    background: var(--primary-bg);
+    background: transparent;
+    position: relative;
 }
 
 .current-sport-title {
     font-family: var(--font-display);
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     letter-spacing: 0.15em;
-    color: var(--olympus-dark);
+    color: var(--text-primary);
     position: relative;
     display: inline-block;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
 }
 
-/* Decorative line */
+.coming-soon-notice {
+    text-align: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.coming-soon-notice p {
+    display: inline-block;
+    padding: 8px 24px;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: var(--radius-md);
+    color: var(--olympus-gold);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+/* Decorative line with glow */
 .current-sport-title::after {
     content: '';
     position: absolute;
     bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
+    width: 80px;
+    height: 3px;
     background: linear-gradient(90deg, transparent, var(--olympus-gold), transparent);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
 }
 
 /* ================================
@@ -349,12 +577,43 @@ body::before {
 .pool-section {
     width: 100%;
     max-width: 100%;
-    background: var(--primary-bg);
+    background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-soft);
     animation: fadeInUp 0.5s ease-out;
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.pool-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 215, 0, 0.03) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* Olympus watermark in leaderboards */
+.pool-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background-image: url('logos/olympus.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
 }
 
 @keyframes fadeInUp {
@@ -374,27 +633,29 @@ body::before {
     justify-content: space-between;
     align-items: center;
     padding: var(--spacing-sm) var(--spacing-md);
-    background: var(--olympus-marble);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.02) 100%);
     border-bottom: 1px solid var(--border-light);
+    position: relative;
 }
 
 .pool-title {
     font-family: var(--font-display);
     font-size: 1.5rem;
     letter-spacing: 0.1em;
-    color: var(--olympus-dark);
+    color: var(--olympus-gold);
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
 }
 
 .pool-badge {
-    background: var(--primary-bg);
+    background: rgba(0, 212, 255, 0.1);
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--radius-sm);
     font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--text-muted);
-    border: 1px solid var(--border-light);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0, 212, 255, 0.3);
 }
 
 .leaderboard-wrapper {
@@ -428,7 +689,7 @@ body::before {
 }
 
 .leaderboard thead {
-    background: var(--primary-off-white);
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .leaderboard th {
@@ -450,6 +711,7 @@ body::before {
 .leaderboard tbody tr {
     border-bottom: 1px solid var(--border-light);
     transition: all var(--transition-fast);
+    position: relative;
 }
 
 .leaderboard tbody tr:last-child {
@@ -457,7 +719,8 @@ body::before {
 }
 
 .leaderboard tbody tr:hover {
-    background: var(--olympus-marble);
+    background: rgba(255, 215, 0, 0.05);
+    box-shadow: inset 0 0 30px rgba(255, 215, 0, 0.03);
 }
 
 .leaderboard td {
@@ -487,21 +750,36 @@ body::before {
 .rank-1 {
     background: linear-gradient(135deg, #ffd700, #f0c420);
     color: #1a1a1a;
-    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    animation: goldPulse 2s ease-in-out infinite;
+}
+
+@keyframes goldPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+    }
 }
 
 .rank-2 {
-    background: linear-gradient(135deg, #e8e8e8, #c0c0c0);
+    background: linear-gradient(135deg, #e8e8e8, #b0b0b0);
     color: #1a1a1a;
+    box-shadow: 0 0 15px rgba(192, 192, 192, 0.4);
 }
 
 .rank-3 {
     background: linear-gradient(135deg, #cd7f32, #b87333);
     color: #ffffff;
+    box-shadow: 0 0 15px rgba(205, 127, 50, 0.4);
 }
 
 .rank-4 {
-    background: var(--olympus-marble);
+    background: rgba(255, 255, 255, 0.1);
     color: var(--text-secondary);
     border: 1px solid var(--border-light);
 }
@@ -514,6 +792,61 @@ body::before {
 
 .team-icon {
     margin-right: var(--spacing-xs);
+}
+
+/* Qualified Badge - "Q" indicator */
+.qualified-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+    color: #0a0a0f;
+    font-size: 0.7rem;
+    font-weight: 800;
+    border-radius: var(--radius-full);
+    margin-left: 8px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    animation: qualifiedPulse 2s ease-in-out infinite;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.qualified-badge::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, #00ff88, #00ffff);
+    z-index: -1;
+    opacity: 0.4;
+    animation: qualifiedGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes qualifiedPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes qualifiedGlow {
+    0% {
+        opacity: 0.3;
+        filter: blur(4px);
+    }
+
+    100% {
+        opacity: 0.6;
+        filter: blur(8px);
+    }
 }
 
 /* Points Column */
@@ -550,13 +883,60 @@ body::before {
 }
 
 /* ================================
+   GENERAL LEADERBOARD
+   ================================ */
+.general-section {
+    margin-top: var(--spacing-sm);
+    border-color: rgba(255, 215, 0, 0.2);
+}
+
+.general-header {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.04) 100%);
+}
+
+.general-badge {
+    background: rgba(255, 215, 0, 0.15) !important;
+    color: var(--olympus-gold) !important;
+    border-color: rgba(255, 215, 0, 0.4) !important;
+}
+
+/* Additional row staggering for 8-row general table */
+.general-section .leaderboard tbody tr:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.general-section .leaderboard tbody tr:nth-child(6) {
+    animation-delay: 0.3s;
+}
+
+.general-section .leaderboard tbody tr:nth-child(7) {
+    animation-delay: 0.35s;
+}
+
+.general-section .leaderboard tbody tr:nth-child(8) {
+    animation-delay: 0.4s;
+}
+
+/* ================================
    FOOTER
    ================================ */
 .footer {
     text-align: center;
     padding: var(--spacing-xl) var(--spacing-md);
     border-top: 1px solid var(--border-light);
-    background: var(--primary-off-white);
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 215, 0, 0.03) 100%);
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--olympus-gold), transparent);
 }
 
 .footer-text {
@@ -567,9 +947,13 @@ body::before {
 
 .footer-subtext {
     font-family: var(--font-display);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     letter-spacing: 0.25em;
-    color: var(--olympus-gold);
+    background: linear-gradient(135deg, var(--olympus-gold) 0%, var(--accent-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
 }
 
 /* ================================
@@ -633,7 +1017,7 @@ body::before {
 /* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
-    background: var(--primary-bg);
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
     padding: var(--spacing-sm) var(--spacing-md);
@@ -645,6 +1029,13 @@ body::before {
     margin: 0 auto var(--spacing-md);
     align-items: center;
     gap: 10px;
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-normal);
+}
+
+.mobile-menu-btn:hover {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: var(--olympus-gold);
 }
 
 .mobile-menu-btn .hamburger {
@@ -706,11 +1097,19 @@ body::before {
     .sport-name {
         font-size: 0.85rem;
     }
+
+    .hero-logo {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 @media (max-width: 600px) {
-    .hero {
-        padding: var(--spacing-xl) var(--spacing-sm);
+
+
+    .hero-logo {
+        width: 80px;
+        height: 80px;
     }
 
     .hero::before,
@@ -751,19 +1150,19 @@ body::before {
    SCROLLBAR STYLING
    ================================ */
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--primary-off-white);
+    background: var(--primary-light);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--border-medium);
-    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--text-muted);
+    background: var(--olympus-gold);
 }
