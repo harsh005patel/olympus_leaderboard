@@ -73,7 +73,7 @@ const sportsData = {
             { team: "Ocean Giants", data: [3, 0, "3.17"], qualified: true }
         ],
         poolB: [
-            { team: "Invictus Aerie", data: [0, 2, "-2.14"], qualified: false },
+            { team: "Invictus Aerie", data: [0, 2, "-2.14"], qualified: false, eliminated: true },
             { team: "Eternity Warriors", data: [2, 0, "3.28"], qualified: false },
             { team: "Trident Titans", data: [1, 1, "-0.88"], qualified: false },
             { team: "Phoenix Clan", data: [1, 1, "0.13"], qualified: false }
@@ -200,7 +200,7 @@ const sportsData = {
     // ----------------------------------------
     chess: {
         poolA: [
-            { team: "Desert Fighters", data: [0, 0, "-"] },
+            { team: "Desert Fighters", data: [0, 2, "-"] },
             { team: "Fiery Falcons", data: [1, 1, "-"] },
             { team: "Los Galacticos", data: [1, 1, "-"] },
             { team: "Ocean Giants", data: [2, 0, "-"], qualified: true }
@@ -345,6 +345,7 @@ function renderLeaderboards(sport) {
     renderTableBody('poolABody', data.poolA, config, sport);
     renderTableBody('poolBBody', data.poolB, config, sport);
     renderGeneralLeaderboard('generalBody', data, config, sport);
+    renderColumnLegend(config, sport);
 
     setTimeout(() => {
         document.getElementById('currentSportTitle').classList.remove('fade-in');
@@ -458,14 +459,16 @@ function computePoints(teamData, config) {
 function generateRowHTML(teamData, rank, config) {
     const logo = teamLogos[teamData.team] || '';
     const isQualified = teamData.qualified === true;
+    const isEliminated = teamData.eliminated === true;
     const qualifiedBadge = isQualified ? '<span class="qualified-badge">Q</span>' : '';
+    const eliminatedBadge = isEliminated ? '<span class="eliminated-badge">E</span>' : '';
     let html = '';
 
     // Rank column
     html += `<td><span class="rank-badge rank-${rank}">${rank}</span></td>`;
 
-    // Team column with logo and optional qualified badge
-    html += `<td class="team-col"><div class="team-cell"><img src="${logo}" alt="${teamData.team}" class="team-logo" onerror="this.style.display='none'"><span class="team-name">${teamData.team}</span>${qualifiedBadge}</div></td>`;
+    // Team column with logo and optional badges
+    html += `<td class="team-col"><div class="team-cell"><img src="${logo}" alt="${teamData.team}" class="team-logo" onerror="this.style.display='none'"><span class="team-name">${teamData.team}</span>${qualifiedBadge}${eliminatedBadge}</div></td>`;
 
     // Matches Played column
     html += `<td>${computeMatchesPlayed(teamData, config)}</td>`;
@@ -565,6 +568,48 @@ function renderOverallLeaderboard() {
         `;
         tbody.appendChild(row);
     });
+}
+
+// Column abbreviation definitions
+const columnDefinitions = {
+    "P": "Matches Played",
+    "Q": "Qualified",
+    "E": "Eliminated",
+    "W": "Wins",
+    "L": "Losses",
+    "D": "Draws",
+    "Pts": "Points (W×2)",
+    "NRR": "Net Run Rate",
+    "GD": { football: "Goal Difference", default: "Game Difference" },
+    "PD": { volleyball: "Point Difference", basketball: "Point Difference", default: "Point Difference" },
+    "G": "Gold",
+    "S": "Silver",
+    "B": "Bronze"
+};
+
+function renderColumnLegend(config, sport) {
+    const legendEl = document.getElementById('columnLegend');
+    if (!legendEl) return;
+
+    // Filter only data columns (skip Rank and Team)
+    const dataCols = config.columns.filter(c => c !== 'Rank' && c !== 'Team');
+
+    const items = dataCols.map(col => {
+        const def = columnDefinitions[col];
+        let meaning = '';
+        if (typeof def === 'string') {
+            meaning = def;
+        } else if (def) {
+            meaning = def[sport] || def.default || '';
+        }
+        return `<span class="legend-item"><strong>${col}</strong> : ${meaning}</span>`;
+    });
+
+    // Manually add Q and E as they aren't in the columns array
+    items.push(`<span class="legend-item"><strong>Q</strong> : Qualified</span>`);
+    items.push(`<span class="legend-item"><strong>E</strong> : Eliminated</span>`);
+
+    legendEl.innerHTML = items.join('<span class="legend-separator">|</span>');
 }
 
 document.addEventListener('DOMContentLoaded', init);

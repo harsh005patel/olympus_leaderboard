@@ -849,6 +849,61 @@ body::after {
     }
 }
 
+/* Eliminated Badge - "E" indicator */
+.eliminated-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    border-radius: var(--radius-full);
+    margin-left: 8px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    animation: eliminatedPulse 2s ease-in-out infinite;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.eliminated-badge::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, #ff4444, #ff6666);
+    z-index: -1;
+    opacity: 0.4;
+    animation: eliminatedGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes eliminatedPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes eliminatedGlow {
+    0% {
+        opacity: 0.3;
+        filter: blur(4px);
+    }
+
+    100% {
+        opacity: 0.6;
+        filter: blur(8px);
+    }
+}
+
 /* Points Column */
 .points {
     font-weight: 700;
@@ -880,6 +935,33 @@ body::after {
 .nrr-negative {
     color: #c75050;
     font-weight: 600;
+}
+
+/* ================================
+   COLUMN LEGEND
+   ================================ */
+.column-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.legend-item {
+    white-space: nowrap;
+}
+
+.legend-item strong {
+    color: var(--olympus-gold);
+    font-weight: 700;
+}
+
+.legend-separator {
+    color: var(--border-light);
+    margin: 0 4px;
 }
 
 /* ================================
