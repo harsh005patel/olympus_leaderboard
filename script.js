@@ -181,10 +181,10 @@ const sportsData = {
     // ----------------------------------------
     carrom: {
         poolA: [
-            { team: "Desert Fighters", data: [1, 1, "-"] },
+            { team: "Desert Fighters", data: [2, 1, "-"] },
             { team: "Fiery Falcons", data: [1, 1, "-"] },
             { team: "Los Galacticos", data: [0, 2, "-"] },
-            { team: "Ocean Giants", data: [2, 0, "-"] }
+            { team: "Ocean Giants", data: [2, 1, "-"] }
         ],
         poolB: [
             { team: "Invictus Aerie", data: [2, 0, "-"], qualified: true },
