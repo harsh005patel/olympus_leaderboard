@@ -163,8 +163,8 @@ const sportsData = {
     badminton: {
         poolA: [
             { team: "Desert Fighters", data: [2, 0], qualified: true },
-            { team: "Fiery Falcons", data: [0, 3] },
-            { team: "Los Galacticos", data: [1, 2] },
+            { team: "Fiery Falcons", data: [0, 3], eliminated: true },
+            { team: "Los Galacticos", data: [1, 2], eliminated: true },
             { team: "Ocean Giants", data: [2, 0], qualified: true }
         ],
         poolB: [
@@ -187,9 +187,9 @@ const sportsData = {
             { team: "Ocean Giants", data: [2, 0, "-"] }
         ],
         poolB: [
-            { team: "Invictus Aerie", data: [2, 0, "-"] },
+            { team: "Invictus Aerie", data: [2, 0, "-"], qualified: true },
             { team: "Eternity Warriors", data: [1, 1, "-"] },
-            { team: "Trident Titans", data: [0, 2, "-"] },
+            { team: "Trident Titans", data: [0, 2, "-"], eliminated: true },
             { team: "Phoenix Clan", data: [1, 1, "-"] }
         ]
     },
