@@ -1245,6 +1245,196 @@ body::after {
     border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--olympus-gold);
+
+/* ================================
+   PLAYOFFS SECTION (IPL STYLE)
+   ================================ */
+.playoffs-section {
+    width: 100%;
+    margin-top: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+
+    /* Hidden by default until rendered */
+}
+
+/* Override display when active */
+.playoffs-section.active {
+    display: block;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.playoffs-header {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.02) 100%);
+    margin: -1rem -1rem var(--spacing-md) -1rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.playoffs-badge {
+    background: rgba(255, 0, 170, 0.1);
+    color: var(--accent-magenta);
+    border: 1px solid rgba(255, 0, 170, 0.3);
+}
+
+.playoffs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+/* Match Card Styles */
+.match-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+/* Green border for decided matches */
+.match-card.match-decided {
+    border: 2px solid rgba(0, 255, 136, 0.5);
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.1);
+}
+
+/* Yellow border for TBD/pending matches */
+.match-card.match-pending {
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.1);
+}
+
+.match-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--olympus-gold);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.match-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--olympus-gold);
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.match-status {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    font-style: italic;
+}
+
+.match-teams {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.team-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+/* Result Styles */
+.team-row.winner {
+    background: rgba(0, 255, 136, 0.1);
+    border-color: rgba(0, 255, 136, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.1);
+}
+
+.team-row.winner .team-name-small {
+    color: var(--accent-laurel);
+    font-weight: 700;
+}
+
+.team-row.loser {
+    background: rgba(255, 68, 68, 0.1);
+    border-color: rgba(255, 68, 68, 0.3);
+    opacity: 0.7;
+}
+
+.team-row.loser .team-name-small {
+    color: var(--accent-red);
+}
+
+.team-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-logo-small {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.team-name-small {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.team-score {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.match-result-text {
+    margin-top: var(--spacing-sm);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--olympus-gold);
+    font-weight: 500;
+    padding-top: var(--spacing-xs);
+    border-top: 1px solid var(--border-light);
+}
+
+/* Detailed Layout for Desktop */
+@media (min-width: 900px) {
+    .playoffs-container {
+        grid-template-areas:
+            "q1 elim"
+            "q2 final";
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .match-q1 {
+        grid-area: q1;
+    }
+
+    .match-elim {
+        grid-area: elim;
+    }
+
+    .match-q2 {
+        grid-area: q2;
+    }
+
+    .match-final {
+        grid-area: final;
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 215, 0, 0.02) 100%);
+        border: 1px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .match-final .match-title {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
 }

@@ -67,17 +67,23 @@ const sportsData = {
     // ----------------------------------------
     cricket: {
         poolA: [
-            { team: "Desert Fighters", data: [0, 2, "-7.50"], qualified: false },
-            { team: "Fiery Falcons", data: [0, 1, "-1.20"], qualified: false },
+            { team: "Desert Fighters", data: [0, 3, "-4.42"], qualified: false },
+            { team: "Fiery Falcons", data: [1, 1, "0.13"], qualified: false },
             { team: "Los Galacticos", data: [1, 1, "0.88"], qualified: false },
             { team: "Ocean Giants", data: [3, 0, "3.17"], qualified: true }
         ],
         poolB: [
             { team: "Invictus Aerie", data: [0, 2, "-2.14"], qualified: false, eliminated: true },
-            { team: "Eternity Warriors", data: [2, 0, "3.28"], qualified: false },
-            { team: "Trident Titans", data: [1, 1, "-0.88"], qualified: false },
-            { team: "Phoenix Clan", data: [1, 1, "0.13"], qualified: false }
-        ]
+            { team: "Eternity Warriors", data: [2, 0, "3.28"], qualified: true },
+            { team: "Trident Titans", data: [2, 1, "2.05"], qualified: true },
+            { team: "Phoenix Clan", data: [1, 2, "-2.77"], eliminated: true }
+        ],
+        playoffs: {
+            qualifier1: { team1: "Ocean Giants", team2: "Eternity Warriors", winner: "TBD", result: "TBD" },
+            eliminator: { team1: "Trident Titans", team2: "TBD", winner: "TBD", result: "TBD" },
+            qualifier2: { team1: "TBD", team2: "TBD", winner: "TBD", result: "TBD" },
+            final: { team1: "TBD", team2: "TBD", winner: "TBD", result: "TBD" }
+        }
     },
 
     // ----------------------------------------
@@ -96,7 +102,13 @@ const sportsData = {
             { team: "Eternity Warriors", data: [1, 1, 2] },
             { team: "Trident Titans", data: [2, 1, 0], qualified: true },
             { team: "Phoenix Clan", data: [1, 2, -2], eliminated: true }
-        ]
+        ],
+        playoffs: {
+            qualifier1: { team1: "Ocean Giants", team2: "TBD", winner: null, result: "TBD" },
+            eliminator: { team1: "Los Galacticos", team2: "TBD", winner: null, result: "TBD" },
+            qualifier2: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" },
+            final: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" }
+        }
     },
 
     // ----------------------------------------
@@ -115,7 +127,8 @@ const sportsData = {
             { team: "Eternity Warriors", data: [2, 1, "-2"], qualified: true },
             { team: "Trident Titans", data: [1, 2, "-11"], eliminated: true },
             { team: "Phoenix Clan", data: [3, 0, "48"], qualified: true }
-        ]
+        ],
+
     },
 
     // ----------------------------------------
@@ -124,17 +137,23 @@ const sportsData = {
     // ----------------------------------------
     basketball: {
         poolA: [
-            { team: "Desert Fighters", data: [3, 0, "-"] },
-            { team: "Fiery Falcons", data: [0, 2, "-"] },
-            { team: "Los Galacticos", data: [1, 2, "-"] },
-            { team: "Ocean Giants", data: [1, 1, "-"] }
+            { team: "Desert Fighters", data: [3, 0, "-"], qualified: true },
+            { team: "Fiery Falcons", data: [1, 2, "-"], eliminated: true },
+            { team: "Los Galacticos", data: [1, 2, "-"], qualified: true },
+            { team: "Ocean Giants", data: [1, 2, "-"], eliminated: true }
         ],
         poolB: [
             { team: "Invictus Aerie", data: [0, 2, "-"] },
             { team: "Eternity Warriors", data: [1, 1, "-"] },
             { team: "Trident Titans", data: [1, 1, "-"] },
             { team: "Phoenix Clan", data: [2, 0, "-"] }
-        ]
+        ],
+        playoffs: {
+            qualifier1: { team1: "Desert Fighters", team2: "TBD", winner: null, result: "TBD" },
+            eliminator: { team1: "Los Galacticos", team2: "TBD", winner: null, result: "TBD" },
+            qualifier2: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" },
+            final: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" }
+        }
     },
 
     // ----------------------------------------
@@ -153,7 +172,13 @@ const sportsData = {
             { team: "Eternity Warriors", data: [3, 0, "11"], qualified: true },
             { team: "Trident Titans", data: [2, 1, "7"], qualified: true },
             { team: "Phoenix Clan", data: [0, 3, "-15"], eliminated: true }
-        ]
+        ],
+        playoffs: {
+            qualifier1: { team1: "Eternity Warriors", team2: "Ocean Giants", winner: null, result: "TBD" },
+            eliminator: { team1: "Los Galacticos", team2: "Trident Titans", winner: null, result: "TBD" },
+            qualifier2: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" },
+            final: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" }
+        }
     },
 
     // ----------------------------------------
@@ -172,7 +197,13 @@ const sportsData = {
             { team: "Eternity Warriors", data: [0, 0] },
             { team: "Trident Titans", data: [0, 2] },
             { team: "Phoenix Clan", data: [2, 0] }
-        ]
+        ],
+        playoffs: {
+            qualifier1: { team1: "Desert Fighters", team2: "TBD", winner: null, result: "TBD" },
+            eliminator: { team1: "Ocean Giants", team2: "TBD", winner: null, result: "TBD" },
+            qualifier2: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" },
+            final: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" }
+        }
     },
 
     // ----------------------------------------
@@ -191,7 +222,13 @@ const sportsData = {
             { team: "Eternity Warriors", data: [1, 1, "-"] },
             { team: "Trident Titans", data: [0, 2, "-"], eliminated: true },
             { team: "Phoenix Clan", data: [1, 1, "-"] }
-        ]
+        ],
+        playoffs: {
+            qualifier1: { team1: "Invictus Aerie", team2: "TBD", winner: null, result: "TBD" },
+            eliminator: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" },
+            qualifier2: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" },
+            final: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" }
+        }
     },
 
     // ----------------------------------------
@@ -206,11 +243,17 @@ const sportsData = {
             { team: "Ocean Giants", data: [3, 0, "-"], qualified: true }
         ],
         poolB: [
-            { team: "Invictus Aerie", data: [1, 0, "-"] },
-            { team: "Eternity Warriors", data: [1, 0, "-"] },
-            { team: "Trident Titans", data: [0, 2, "-"] },
-            { team: "Phoenix Clan", data: [1, 1, "-"] }
-        ]
+            { team: "Invictus Aerie", data: [2, 1, "-"], qualified: true },
+            { team: "Eternity Warriors", data: [3, 0, "-"], qualified: true },
+            { team: "Trident Titans", data: [0, 3, "-"], eliminated: true },
+            { team: "Phoenix Clan", data: [1, 2, "-"], eliminated: true }
+        ],
+        playoffs: {
+            qualifier1: { team1: "Ocean Giants", team2: "Eternity Warriors", winner: null, result: "TBD" },
+            eliminator: { team1: "Fiery Falcons", team2: "Invictus Aerie", winner: null, result: "TBD" },
+            qualifier2: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" },
+            final: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" }
+        }
     },
 
     // ----------------------------------------
@@ -229,7 +272,13 @@ const sportsData = {
             { team: "Eternity Warriors", data: [0, 0, 0] },
             { team: "Trident Titans", data: [0, 0, 0] },
             { team: "Phoenix Clan", data: [0, 0, 0] }
-        ]
+        ],
+        playoffs: {
+            qualifier1: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" },
+            eliminator: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" },
+            qualifier2: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" },
+            final: { team1: "TBD", team2: "TBD", winner: null, result: "TBD" }
+        }
     }
 };
 
@@ -345,7 +394,9 @@ function renderLeaderboards(sport) {
     renderTableBody('poolABody', data.poolA, config, sport);
     renderTableBody('poolBBody', data.poolB, config, sport);
     renderGeneralLeaderboard('generalBody', data, config, sport);
+
     renderColumnLegend(config, sport);
+    renderPlayoffs(sport); // Render IPL-style playoffs
 
     setTimeout(() => {
         document.getElementById('currentSportTitle').classList.remove('fade-in');
@@ -385,13 +436,108 @@ function renderGeneralLeaderboard(bodyId, data, config, sport) {
     const tbody = document.getElementById(bodyId);
     tbody.innerHTML = '';
 
-    // Combine both pools
-    const allTeams = [...data.poolA, ...data.poolB];
+    // Combine both pools — use deep copies so we don't mutate pool data
+    const allTeams = [...data.poolA, ...data.poolB].map(t => ({
+        ...t,
+        data: [...t.data]
+    }));
 
-    // Sort by auto-computed points
-    const sortedTeams = [...allTeams].sort((a, b) => compareTeams(a, b, config));
+    // Add playoff wins/losses and diff to the general leaderboard
+    if (data.playoffs) {
+        const matches = [
+            data.playoffs.qualifier1,
+            data.playoffs.eliminator,
+            data.playoffs.qualifier2,
+            data.playoffs.final
+        ];
 
-    sortedTeams.forEach((teamData, index) => {
+        // Find the tiebreaker column index (NRR, GD, or PD) → maps to data[2]
+        const tieBreakers = ["NRR", "GD", "PD"];
+        const hasTieBreaker = config.columns.some(col => tieBreakers.includes(col));
+
+        matches.forEach(match => {
+            if (match && match.winner && match.winner !== 'TBD') {
+                const winner = allTeams.find(t => t.team === match.winner);
+                const loserName = match.team1 === match.winner ? match.team2 : match.team1;
+                const loser = allTeams.find(t => t.team === loserName);
+
+                if (winner && loserName !== 'TBD') {
+                    winner.data[0] = (Number(winner.data[0]) || 0) + 1; // +1 Win
+                }
+                if (loser) {
+                    loser.data[1] = (Number(loser.data[1]) || 0) + 1; // +1 Loss
+                }
+
+                // Add PD/GD/NRR diff if provided (data[2] is the tiebreaker column)
+                if (hasTieBreaker) {
+                    const winnerDiff = match.team1 === match.winner ? match.team1Diff : match.team2Diff;
+                    const loserDiff = match.team1 === match.winner ? match.team2Diff : match.team1Diff;
+
+                    if (winner && winnerDiff !== undefined) {
+                        winner.data[2] = String(parseFloat(winner.data[2]) + parseFloat(winnerDiff) || parseFloat(winnerDiff));
+                    }
+                    if (loser && loserDiff !== undefined) {
+                        loser.data[2] = String(parseFloat(loser.data[2]) + parseFloat(loserDiff) || parseFloat(loserDiff));
+                    }
+                }
+            }
+        });
+    }
+
+    // ── Fixed playoff positions ──
+    // Final winner = 1st, Final loser = 2nd, Q2 loser = 3rd, Eliminator loser = 4th
+    const fixedPositions = {}; // { teamName: rank }
+
+    if (data.playoffs) {
+        const elim = data.playoffs.eliminator;
+        const q2 = data.playoffs.qualifier2;
+        const fin = data.playoffs.final;
+
+        // Eliminator loser → 4th
+        if (elim && elim.winner && elim.winner !== 'TBD') {
+            const elimLoser = elim.team1 === elim.winner ? elim.team2 : elim.team1;
+            if (elimLoser !== 'TBD') fixedPositions[elimLoser] = 4;
+        }
+
+        // Qualifier 2 loser → 3rd
+        if (q2 && q2.winner && q2.winner !== 'TBD') {
+            const q2Loser = q2.team1 === q2.winner ? q2.team2 : q2.team1;
+            if (q2Loser !== 'TBD') fixedPositions[q2Loser] = 3;
+        }
+
+        // Final winner → 1st, Final loser → 2nd
+        if (fin && fin.winner && fin.winner !== 'TBD') {
+            fixedPositions[fin.winner] = 1;
+            const finLoser = fin.team1 === fin.winner ? fin.team2 : fin.team1;
+            if (finLoser !== 'TBD') fixedPositions[finLoser] = 2;
+        }
+    }
+
+    // Separate teams with fixed positions from the rest
+    const fixedTeams = allTeams.filter(t => fixedPositions[t.team] !== undefined);
+    const unfixedTeams = allTeams.filter(t => fixedPositions[t.team] === undefined);
+
+    // Sort unfixed teams normally
+    unfixedTeams.sort((a, b) => compareTeams(a, b, config));
+
+    // Build final ordered list (8 slots)
+    const finalOrder = new Array(allTeams.length).fill(null);
+
+    // Place fixed teams at their designated positions (1-indexed → 0-indexed)
+    fixedTeams.forEach(t => {
+        finalOrder[fixedPositions[t.team] - 1] = t;
+    });
+
+    // Fill remaining slots with unfixed teams in sorted order
+    let unfixedIdx = 0;
+    for (let i = 0; i < finalOrder.length; i++) {
+        if (finalOrder[i] === null && unfixedIdx < unfixedTeams.length) {
+            finalOrder[i] = unfixedTeams[unfixedIdx++];
+        }
+    }
+
+    finalOrder.forEach((teamData, index) => {
+        if (!teamData) return;
         const row = document.createElement('tr');
         row.innerHTML = generateGeneralRowHTML(teamData, index + 1, config);
         tbody.appendChild(row);
@@ -601,6 +747,80 @@ function renderColumnLegend(config, sport) {
     items.push(`<span class="legend-item"><strong>E</strong> : Eliminated</span>`);
 
     legendEl.innerHTML = items.join('<span class="legend-separator">|</span>');
+}
+
+// ============================================
+// PLAYOFFS RENDERING (IPL STYLE)
+// ============================================
+
+function renderPlayoffs(sport) {
+    const section = document.getElementById('playoffsSection');
+    const container = document.getElementById('playoffsContainer');
+
+    // Check if sport has playoffs data
+    const playoffsData = sportsData[sport]?.playoffs;
+
+    if (!playoffsData) {
+        section.style.display = 'none';
+        return;
+    }
+
+    // Show section
+    section.style.display = 'block';
+    // Force reflow
+    void section.offsetWidth;
+    section.classList.add('active');
+
+    // Helper to generate a match card
+    const createMatchCard = (matchKey, title, matchData) => {
+        const t1 = matchData.team1;
+        const t2 = matchData.team2;
+        const winner = matchData.winner;
+        const result = matchData.result;
+
+        // Determine classes for winners/losers (skip if winner is TBD)
+        const isDecided = winner && winner !== 'TBD';
+        const t1Class = isDecided && winner === t1 ? 'winner' : (isDecided && winner !== t1 ? 'loser' : '');
+        const t2Class = isDecided && winner === t2 ? 'winner' : (isDecided && winner !== t2 ? 'loser' : '');
+
+        // Logos
+        const t1Logo = teamLogos[t1] || '';
+        const t2Logo = teamLogos[t2] || '';
+
+        // Card border class: green if decided, yellow if TBD
+        const cardStatus = isDecided ? 'match-decided' : 'match-pending';
+
+        return `
+            <div class="match-card match-${matchKey} ${cardStatus}">
+                <div class="match-title">${title}</div>
+                <div class="match-teams">
+                    <div class="team-row ${t1Class}">
+                        <div class="team-info">
+                            <img src="${t1Logo}" class="team-logo-small" onerror="this.style.display='none'">
+                            <span class="team-name-small">${t1}</span>
+                        </div>
+                        ${isDecided && winner === t1 ? '<span class="team-score">✓</span>' : ''}
+                    </div>
+                    <div class="team-row ${t2Class}">
+                        <div class="team-info">
+                            <img src="${t2Logo}" class="team-logo-small" onerror="this.style.display='none'">
+                            <span class="team-name-small">${t2}</span>
+                        </div>
+                        ${isDecided && winner === t2 ? '<span class="team-score">✓</span>' : ''}
+                    </div>
+                </div>
+                <div class="match-result-text">${result}</div>
+            </div>
+        `;
+    };
+
+    let html = '';
+    html += createMatchCard('q1', 'Qualifier 1', playoffsData.qualifier1);
+    html += createMatchCard('elim', 'Eliminator', playoffsData.eliminator);
+    html += createMatchCard('q2', 'Qualifier 2', playoffsData.qualifier2);
+    html += createMatchCard('final', 'Final', playoffsData.final);
+
+    container.innerHTML = html;
 }
 
 document.addEventListener('DOMContentLoaded', init);
