@@ -137,16 +137,16 @@ const sportsData = {
     // ----------------------------------------
     basketball: {
         poolA: [
-            { team: "Desert Fighters", data: [3, 0, "-"], qualified: true },
-            { team: "Fiery Falcons", data: [1, 2, "-"], eliminated: true },
-            { team: "Los Galacticos", data: [1, 2, "-"], qualified: true },
-            { team: "Ocean Giants", data: [1, 2, "-"], eliminated: true }
+            { team: "Desert Fighters", data: [3, 0, "24"], qualified: true },
+            { team: "Fiery Falcons", data: [1, 2, "-12"], eliminated: true },
+            { team: "Los Galacticos", data: [1, 2, "-3"], qualified: true },
+            { team: "Ocean Giants", data: [1, 2, "-9"], eliminated: true }
         ],
         poolB: [
-            { team: "Invictus Aerie", data: [0, 2, "-"] },
-            { team: "Eternity Warriors", data: [1, 1, "-"] },
-            { team: "Trident Titans", data: [1, 1, "-"] },
-            { team: "Phoenix Clan", data: [2, 0, "-"] }
+            { team: "Invictus Aerie", data: [0, 3, "-21"] },
+            { team: "Eternity Warriors", data: [1, 1, "-12"] },
+            { team: "Trident Titans", data: [2, 1, "22"] ,qualified: true},
+            { team: "Phoenix Clan", data: [2, 0, "11"] }
         ],
         playoffs: {
             qualifier1: { team1: "Desert Fighters", team2: "TBD", winner: null, result: "TBD" },
