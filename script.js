@@ -25,8 +25,8 @@ const sportConfigs = {
     },
     basketball: {
         title: "Basketball Championship",
-        columns: ["Rank", "Team", "P", "W", "L", "PD", "Pts"],
-        comingSoon: true
+        columns: ["Rank", "Team", "P", "W", "L", "PD", "Pts"]
+
     },
     tabletennis: {
         title: "Table Tennis Championship",
