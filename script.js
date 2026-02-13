@@ -130,7 +130,7 @@ const sportsData = {
         ],
 
         playoffs: {
-            qualifier1: { team1: "Phoenix Clan", team2: "Los Galacticos", winner: "Phoenix Clan", result: "PC won", team1Diff: "-19", team2Diff: "19" },
+            qualifier1: { team1: "Phoenix Clan", team2: "Los Galacticos", winner: "Phoenix Clan", result: "PC won", team1Diff: "19", team2Diff: "-19" },
             eliminator: { team1: "Eternity Warriors", team2: "Desert Fighters", winner: null, result: "TBD" },
             qualifier2: { team1: "Los Galacticos", team2: "TBD", winner: null, result: "TBD" },
             final: { team1: "Phoenix Clan", team2: "TBD", winner: null, result: "TBD" }
