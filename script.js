@@ -69,7 +69,7 @@ const sportsData = {
         poolA: [
             { team: "Desert Fighters", data: [0, 3, "-4.42"], qualified: false, eliminated: true },
             { team: "Fiery Falcons", data: [2, 1, "0.77"], qualified: true },
-            { team: "Los Galacticos", data: [1, 2, "-0.60"], qualified: true },
+            { team: "Los Galacticos", data: [1, 2, "-0.60"], eliminated: true },
             { team: "Ocean Giants", data: [3, 0, "3.17"], qualified: true }
         ],
         poolB: [
