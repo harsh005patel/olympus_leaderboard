@@ -260,7 +260,8 @@ const sportsData = {
             qualifier1: { team1: "Ocean Giants", team2: "Eternity Warriors", winner: "Ocean Giants", result: "OG won" },
             eliminator: { team1: "Fiery Falcons", team2: "Invictus Aerie", winner: "Invictus Aerie", result: "IA won" },
             qualifier2: { team1: "Eternity warriors", team2: "Invictus Aerie", winner: "Invictus Aerie", result: "IA won" },
-            final: { team1: "Ocean Giants", team2: "Invictus Aerie", winner: "Invictus Aerie", result: "IA won" }
+            final: { team1: "Ocean Giants", team2: "Invictus Aerie", winner: "Invictus Aerie", result: "IA won" },
+            manualPositions: { "Phoenix Clan": 5, "Los Galacticos": 6, "Trident Titans": 7, "Desert Fighters": 8 }
         }
     },
 
