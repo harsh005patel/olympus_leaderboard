@@ -781,10 +781,23 @@ function renderOverallLeaderboard() {
         "Invictus Aerie", "Eternity Warriors", "Trident Titans", "Phoenix Clan"
     ];
 
+    // Count gold (1st) and silver (2nd) medals per team across all sports
+    const medalCounts = {};
+    teamNames.forEach(name => { medalCounts[name] = { gold: 0, silver: 0 }; });
+
+    for (const sport in sportsData) {
+        if (sportConfigs[sport].comingSoon) continue;
+        const ranking = getSportRanking(sport);
+        if (ranking[0]) medalCounts[ranking[0].team].gold++;
+        if (ranking[1]) medalCounts[ranking[1].team].silver++;
+    }
+
     // Compute overall points and sort
     const teamPoints = teamNames.map(name => ({
         team: name,
-        totalPts: computeOverallPoints(name)
+        totalPts: computeOverallPoints(name),
+        gold: medalCounts[name].gold,
+        silver: medalCounts[name].silver
     })).sort((a, b) => b.totalPts - a.totalPts);
 
     // Render rows
@@ -792,10 +805,15 @@ function renderOverallLeaderboard() {
     teamPoints.forEach((tp, index) => {
         const rank = index + 1;
         const logo = teamLogos[tp.team] || '';
+
+        // Build medal string: repeat 🥇 for each gold, 🥈 for each silver
+        const medals = '🥇'.repeat(tp.gold) + '🥈'.repeat(tp.silver);
+        const medalSpan = medals ? `<span class="overall-medals">${medals}</span>` : '';
+
         const row = document.createElement('tr');
         row.innerHTML = `
             <td><span class="rank-badge rank-${rank}">${rank}</span></td>
-            <td class="team-col"><div class="team-cell"><img src="${logo}" alt="${tp.team}" class="team-logo" onerror="this.style.display='none'"><span class="team-name">${tp.team}</span></div></td>
+            <td class="team-col"><div class="team-cell"><img src="${logo}" alt="${tp.team}" class="team-logo" onerror="this.style.display='none'"><span class="team-name">${tp.team}</span>${medalSpan}</div></td>
             <td class="points">${tp.totalPts}</td>
         `;
         tbody.appendChild(row);
