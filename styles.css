@@ -1284,6 +1284,86 @@ body::after {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-md);
     justify-content: center;
+    position: relative;
+}
+
+/* ================================
+   CHAMPION OVERLAY BOX
+   ================================ */
+.champion-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 130px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    z-index: 10;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    gap: 4px;
+    transition: all var(--transition-normal);
+    pointer-events: none;
+}
+
+.champion-overlay.champion-pending {
+    background: rgba(10, 10, 15, 0.92);
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    box-shadow:
+        0 0 25px rgba(255, 215, 0, 0.15),
+        inset 0 0 20px rgba(255, 215, 0, 0.05);
+}
+
+.champion-overlay.champion-decided {
+    background: rgba(10, 10, 15, 0.92);
+    border: 2px solid rgba(0, 255, 136, 0.6);
+    box-shadow:
+        0 0 30px rgba(0, 255, 136, 0.2),
+        0 0 60px rgba(255, 215, 0, 0.1),
+        inset 0 0 20px rgba(0, 255, 136, 0.05);
+    animation: championPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes championPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 30px rgba(0, 255, 136, 0.2),
+            0 0 60px rgba(255, 215, 0, 0.1),
+            inset 0 0 20px rgba(0, 255, 136, 0.05);
+    }
+
+    50% {
+        box-shadow:
+            0 0 40px rgba(0, 255, 136, 0.35),
+            0 0 80px rgba(255, 215, 0, 0.15),
+            inset 0 0 30px rgba(0, 255, 136, 0.08);
+    }
+}
+
+.champion-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
+}
+
+.champion-trophy {
+    font-size: 3.5rem;
+    line-height: 1;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+/* Hide champion overlay on mobile stacked layout */
+@media (max-width: 899px) {
+    .champion-overlay {
+        display: none;
+    }
 }
 
 /* Match Card Styles */
