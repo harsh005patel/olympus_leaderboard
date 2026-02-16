@@ -209,7 +209,8 @@ const sportsData = {
             qualifier1: { team1: "Desert Fighters", team2: "Phoenix Clan", winner: "Desert Fighters", result: "DF won" },
             eliminator: { team1: "Ocean Giants", team2: "Invictus Aerie", winner: "Invictus Aerie", result: "IA won" },
             qualifier2: { team1: "Invictus Aerie", team2: "Phoenix Clan", winner: "Invictus Aerie", result: "IA won" },
-            final: { team1: "Desert Fighters", team2: "Invictus Aerie", winner: "Desert Fighters", result: "DF won" }
+            final: { team1: "Desert Fighters", team2: "Invictus Aerie", winner: "Desert Fighters", result: "DF won" },
+            manualPositions: { "Eternity Warriors": 5, "Los Galacticos": 6, "Trident Titans": 7, "Fiery Falcons": 8 }
         }
     },
 
@@ -219,10 +220,10 @@ const sportsData = {
     // ----------------------------------------
     carrom: {
         poolA: [
-            { team: "Desert Fighters", data: [2, 1, "-"] },
-            { team: "Fiery Falcons", data: [1, 1, "-"] },
-            { team: "Los Galacticos", data: [0, 2, "-"] },
-            { team: "Ocean Giants", data: [2, 1, "-"] }
+            { team: "Desert Fighters", data: [2, 1, "-"], qualified: true },
+            { team: "Fiery Falcons", data: [1, 2, "-"], qualified: true },
+            { team: "Los Galacticos", data: [1, 2, "-"], eliminated: true },
+            { team: "Ocean Giants", data: [2, 1, "-"], qualified: true }
         ],
         poolB: [
             { team: "Invictus Aerie", data: [3, 0, "-"], qualified: true },
@@ -232,7 +233,7 @@ const sportsData = {
         ],
         playoffs: {
             qualifier1: { team1: "Invictus Aerie", team2: "Ocean Giants", winner: "Invictus Aerie", result: "IA won" },
-            eliminator: { team1: "Eternity Warriors", team2: "Los Galacticos", winner: "Eternity Warriors", result: "EW won" },
+            eliminator: { team1: "Eternity Warriors", team2: "Desert Fighters", winner: "Eternity Warriors", result: "EW won" },
             qualifier2: { team1: "Eternity Warriors", team2: "Ocean Giants", winner: "Ocean Giants", result: "OG won" },
             final: { team1: "Invictus Aerie", team2: "Ocean Giants", winner: "Invictus Aerie", result: "IA won" }
         }
@@ -520,6 +521,11 @@ function renderGeneralLeaderboard(bodyId, data, config, sport) {
         }
     }
 
+    // Merge manual position overrides if provided
+    if (data.playoffs && data.playoffs.manualPositions) {
+        Object.assign(fixedPositions, data.playoffs.manualPositions);
+    }
+
     // Separate teams with fixed positions from the rest
     const fixedTeams = allTeams.filter(t => fixedPositions[t.team] !== undefined);
     const unfixedTeams = allTeams.filter(t => fixedPositions[t.team] === undefined);
@@ -722,6 +728,11 @@ function getSportRanking(sport) {
             const finLoser = fin.team1 === fin.winner ? fin.team2 : fin.team1;
             if (finLoser !== 'TBD') fixedPositions[finLoser] = 2;
         }
+    }
+
+    // Merge manual position overrides if provided
+    if (data.playoffs && data.playoffs.manualPositions) {
+        Object.assign(fixedPositions, data.playoffs.manualPositions);
     }
 
     const fixedTeams = allTeams.filter(t => fixedPositions[t.team] !== undefined);
